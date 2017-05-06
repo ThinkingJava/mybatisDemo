@@ -1,0 +1,53 @@
+*.sw?
+.#*
+*#
+*~
+.classpath
+.project
+.settings
+bin
+target
+dependency-reduced-pom.xml
+*.sublime-*
+/scratch
+*.iml
+README.html
+
+# maven ignore
+target/
+*.jar
+*.war
+*.zip
+*.tar
+*.tar.gz
+
+# eclipse ignore
+.settings/
+.project
+.classpath
+
+# idea ignore
+*.ipr
+*.iml
+*.iws
+build/
+out/
+*.iml
+
+local.properties
+.idea/workspace.xml
+.idea/libraries
+.DS_Store
+build/
+captures
+
+# temp ignore
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+
+# system ignore
+.DS_Store
+Thumbs.db
