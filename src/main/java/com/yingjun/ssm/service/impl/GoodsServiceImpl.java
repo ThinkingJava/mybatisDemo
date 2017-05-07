@@ -1,6 +1,7 @@
 package com.yingjun.ssm.service.impl;
 
-import com.yingjun.ssm.cache.RedisCache;
+//import com.yingjun.ssm.cache.RedisCache;
+import com.yingjun.ssm.cache.RedisClusterCache;
 import com.yingjun.ssm.dao.GoodsDao;
 import com.yingjun.ssm.dao.OrderDao;
 import com.yingjun.ssm.dao.UserDao;
@@ -30,19 +31,21 @@ public class GoodsServiceImpl implements GoodsService {
 	private OrderDao orderDao;
 	@Autowired
 	private UserDao userDao;
+//	@Autowired
+//	private RedisCache cache;
 	@Autowired
-	private RedisCache cache;
+	private RedisClusterCache cache;
 
 	@Override
 	public List<Goods> getGoodsList(int offset, int limit) {
-		String cache_key = RedisCache.CAHCENAME + "|getGoodsList|" + offset + "|" + limit;
+		String cache_key = RedisClusterCache.CAHCENAME + "|getGoodsList|" + offset + "|" + limit;
 		List<Goods> result_cache = cache.getListCache(cache_key, Goods.class);
 		if (result_cache != null) {
 			LOG.info("get cache with key:" + cache_key);
 		} else {
 			// 缓存中没有再去数据库取，并插入缓存（缓存时间为60秒）
 			result_cache = goodsDao.queryAll(offset, limit);
-			cache.putListCacheWithExpireTime(cache_key, result_cache, RedisCache.CAHCETIME);
+			cache.putListCacheWithExpireTime(cache_key, result_cache, RedisClusterCache.CAHCETIME);
 			LOG.info("put cache with key:" + cache_key);
 			return result_cache;
 		}
