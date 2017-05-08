@@ -1,7 +1,8 @@
 package com.ych.ssm.quartz;
 
-
 import com.ych.ssm.dao.UserDao;
+
+import com.ych.ssm.cache.RedisCache;
 import com.ych.ssm.cache.RedisClusterCache;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,8 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-//import RedisCache;
-
+import com.ych.ssm.dao.UserDao;
 
 /**
  * 业务相关的作业调度
@@ -29,7 +29,7 @@ import org.springframework.stereotype.Component;
 	L  字符仅被用于天（月）和天（星期）两个子表达式，表示一个月的最后一天或者一个星期的最后一天
 	6L 可以表示倒数第６天
 	
- * @author yingjun
+ * @author ych
  *
  */
 @Component
@@ -38,10 +38,10 @@ public class BizQuartz {
 	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 	@Autowired
 	private UserDao userDao;
-//	@Autowired
-//	private RedisCache cache;
 	@Autowired
-	private RedisClusterCache cache;
+	private RedisCache cache;
+//	@Autowired
+//	private RedisClusterCache cache;
 	
 	/**
 	 * 用户自动加积分

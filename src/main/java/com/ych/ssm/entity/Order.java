@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  * 订单
- * @author  yingjun
+ * @author  ych
  *
  */
 public class Order {

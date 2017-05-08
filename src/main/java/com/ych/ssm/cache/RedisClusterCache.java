@@ -18,7 +18,7 @@ import java.util.Set;
  *
  * 采用Jedis Cluster
  *
- * @author yingjun
+ * @author ych
  *
  */
 @Component
@@ -28,7 +28,7 @@ public class RedisClusterCache {
 	public final static String CAHCENAME="cache";//缓存名
 	public final static int CAHCETIME=60;//默认缓存时间
 
-	@Autowired
+//	@Autowired
 	private JedisCluster jedisCluster;
 
 

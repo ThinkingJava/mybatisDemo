@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 /**
  * 
- * @author yingjun
+ * @author ych
  *
  * ajax 请求的返回类型封装JSON结果
  */

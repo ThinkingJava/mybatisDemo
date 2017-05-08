@@ -9,6 +9,8 @@ import com.ych.ssm.cache.RedisClusterCache;
 import com.ych.ssm.entity.Goods;
 import com.ych.ssm.entity.User;
 import com.ych.ssm.enums.ResultEnum;
+import com.ych.ssm.cache.RedisCache;
+
 import com.ych.ssm.service.GoodsService;
 import org.apache.commons.collections.MapUtils;
 import org.slf4j.Logger;
@@ -31,10 +33,10 @@ public class GoodsServiceImpl implements GoodsService {
 	private OrderDao orderDao;
 	@Autowired
 	private UserDao userDao;
-//	@Autowired
-//	private RedisCache cache;
 	@Autowired
-	private RedisClusterCache cache;
+	private RedisCache cache;
+//	@Autowired
+//	private RedisClusterCache cache;
 
 	@Override
 	public List<Goods> getGoodsList(int offset, int limit) {

@@ -1,7 +1,7 @@
 package com.ych.ssm.exception;
 /**
  * 
- * @author yingjun
+ * @author ych
  *
  */
 public class BizException extends RuntimeException {
