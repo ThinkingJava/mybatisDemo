@@ -1,6 +1,7 @@
 package com.ych.ssm.service.impl;
 
 //import RedisCache;
+import com.ych.ssm.cache.RedisCache;
 import com.ych.ssm.service.UserService;
 import com.ych.ssm.cache.RedisClusterCache;
 import com.ych.ssm.dao.UserDao;
@@ -18,10 +19,10 @@ public class UserServiceImpl implements UserService {
 	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 	@Autowired
 	private UserDao userDao;
-//	@Autowired
-//	private RedisCache cache;
 	@Autowired
-	private RedisClusterCache cache;
+	private RedisCache cache;
+//	@Autowired
+//	private RedisClusterCache cache;
 	
 	
 	@Override

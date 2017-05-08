@@ -1,6 +1,7 @@
 package com.ych.ssm.cache;
 
 import com.ych.ssm.util.ProtoStuffSerializerUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.core.RedisCallback;
@@ -23,7 +24,7 @@ public class RedisCache {
 	public final static String CAHCENAME="cache";//缓存名
 	public final static int CAHCETIME=60;//默认缓存时间
 
-//	@Autowired
+	@Autowired
 	private RedisTemplate<String, String> redisTemplate;
 
 	public <T> boolean putCache(String key, T obj) {

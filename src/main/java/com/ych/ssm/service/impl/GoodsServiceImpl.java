@@ -1,6 +1,7 @@
 package com.ych.ssm.service.impl;
 
 //import RedisCache;
+import com.ych.ssm.cache.RedisCache;
 import com.ych.ssm.dao.GoodsDao;
 import com.ych.ssm.dao.OrderDao;
 import com.ych.ssm.enums.ResultEnum;
@@ -31,10 +32,10 @@ public class GoodsServiceImpl implements GoodsService {
 	private OrderDao orderDao;
 	@Autowired
 	private UserDao userDao;
-//	@Autowired
-//	private RedisCache cache;
 	@Autowired
-	private RedisClusterCache cache;
+	private RedisCache cache;
+//	@Autowired
+//	private RedisClusterCache cache;
 
 	@Override
 	public List<Goods> getGoodsList(int offset, int limit) {

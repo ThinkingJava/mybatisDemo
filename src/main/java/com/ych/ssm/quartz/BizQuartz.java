@@ -1,6 +1,7 @@
 package com.ych.ssm.quartz;
 
 
+import com.ych.ssm.cache.RedisCache;
 import com.ych.ssm.cache.RedisClusterCache;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,10 +38,10 @@ public class BizQuartz {
 	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 	@Autowired
 	private UserDao userDao;
-//	@Autowired
-//	private RedisCache cache;
 	@Autowired
-	private RedisClusterCache cache;
+	private RedisCache cache;
+//	@Autowired
+//	private RedisClusterCache cache;
 	
 	/**
 	 * 用户自动加积分
