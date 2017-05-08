@@ -69,6 +69,7 @@ public class RedisClusterCache {
 		if (result == null) {
 			return null;
 		}
+
 		return ProtoStuffSerializerUtil.deserializeList(result, targetClass);
 	}
 

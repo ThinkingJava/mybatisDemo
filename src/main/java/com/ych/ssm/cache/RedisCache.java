@@ -4,10 +4,13 @@ import com.ych.ssm.util.ProtoStuffSerializerUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
+import org.springframework.data.redis.connection.SortParameters;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.query.SortQueryBuilder;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -122,8 +125,33 @@ public class RedisCache {
 	}
 
 	/**
-	 * 清空所有缓存
+	 * 分页查找
+     * sortPageList("proList","pro:","createTime",true,false,0,20)//本次分页取前20条数据0-->19
+	 * 需要注意到的是isAlpha参数
+	 *如果设置为true
+	 *将按照字幕顺序进行排序。
 	 */
+	public <T> List<T> sortPageList(String key,String subKey,String by,boolean isDesc,boolean isAlpha,int off,int num) throws  Exception{
+		SortQueryBuilder<String> builder = SortQueryBuilder.sort(key);
+		builder.by(subKey+"*->"+by);
+		builder.get("#");
+		builder.alphabetical(isAlpha);
+		if(isDesc)
+			builder.order(SortParameters.Order.DESC);
+		builder.limit(off, num);
+		List<String> cks = redisTemplate.sort(builder.build());
+		List<T> result = new ArrayList<T>();
+		for (String ck : cks) {
+			//得到项目对象 by(subKey+ck);
+		}
+		return result;
+	}
+
+
+
+	/**
+         * 清空所有缓存
+         */
 	public void clearCache() {
 		deleteCacheWithPattern(RedisCache.CAHCENAME+"|*");
 	}
