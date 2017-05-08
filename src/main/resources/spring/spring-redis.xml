@@ -79,11 +79,11 @@
 				</bean>
 				<bean class="org.springframework.data.redis.connection.RedisClusterNode">
 					<constructor-arg name="host" value="${redis.ip4}"></constructor-arg>
-					<constructor-arg name="port" value="${redis.port3}"></constructor-arg>
+					<constructor-arg name="port" value="${redis.port4}"></constructor-arg>
 				</bean>
 				<bean class="org.springframework.data.redis.connection.RedisClusterNode">
 					<constructor-arg name="host" value="${redis.ip5}"></constructor-arg>
-					<constructor-arg name="port" value="${redis.port4}"></constructor-arg>
+					<constructor-arg name="port" value="${redis.port5}"></constructor-arg>
 				</bean>
 				<bean class="org.springframework.data.redis.connection.RedisClusterNode">
 					<constructor-arg name="host" value="${redis.ip6}"></constructor-arg>
