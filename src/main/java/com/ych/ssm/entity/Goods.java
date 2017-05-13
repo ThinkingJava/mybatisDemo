@@ -2,6 +2,8 @@ package com.ych.ssm.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.ych.ssm.util.CustomDateSerializer;
+import com.ych.ssm.validator.Not999;
 import com.ych.ssm.validator.Not999;
 import com.ych.ssm.util.CustomDateSerializer;
 
@@ -27,7 +29,7 @@ public class Goods {
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date createTime;
 	
-	@JsonSerialize(using = CustomDateSerializer.class)  
+	@JsonSerialize(using = CustomDateSerializer.class)
 	private Date updateTime;
 	
 	public long getGoodsId() {

@@ -1,11 +1,11 @@
 package com.ych.ssm.service.impl;
 
 //import RedisCache;
-import com.ych.ssm.cache.RedisCache;
-import com.ych.ssm.service.UserService;
-import com.ych.ssm.cache.RedisClusterCache;
 import com.ych.ssm.dao.UserDao;
 import com.ych.ssm.entity.User;
+import com.ych.ssm.service.UserService;
+import com.ych.ssm.cache.RedisClusterCache;
+import com.ych.ssm.cache.RedisCache;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,5 +1,6 @@
 package com.ych.ssm.quartz;
 
+import com.ych.ssm.dao.UserDao;
 
 import com.ych.ssm.cache.RedisCache;
 import com.ych.ssm.cache.RedisClusterCache;
@@ -9,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-//import RedisCache;
 import com.ych.ssm.dao.UserDao;
 
 /**

@@ -1,15 +1,16 @@
 package com.ych.ssm.service.impl;
 
 //import RedisCache;
-import com.ych.ssm.cache.RedisCache;
 import com.ych.ssm.dao.GoodsDao;
 import com.ych.ssm.dao.OrderDao;
-import com.ych.ssm.enums.ResultEnum;
+import com.ych.ssm.dao.UserDao;
 import com.ych.ssm.exception.BizException;
 import com.ych.ssm.cache.RedisClusterCache;
-import com.ych.ssm.dao.UserDao;
 import com.ych.ssm.entity.Goods;
 import com.ych.ssm.entity.User;
+import com.ych.ssm.enums.ResultEnum;
+import com.ych.ssm.cache.RedisCache;
+
 import com.ych.ssm.service.GoodsService;
 import org.apache.commons.collections.MapUtils;
 import org.slf4j.Logger;

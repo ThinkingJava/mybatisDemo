@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.ych.ssm.entity.User;
 import org.apache.ibatis.annotations.Param;
-
 public interface UserDao {
 
 	/**
