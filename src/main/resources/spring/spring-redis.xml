@@ -23,7 +23,7 @@
 
 	<!--  redis集群配置第一种方式  -->
 	<!-- JedisCluster 集群高可用配置 -->
-<!--	<bean id="jedisCluster" class="redis.clients.jedis.JedisCluster">
+	<bean id="jedisCluster" class="redis.clients.jedis.JedisCluster">
 		<constructor-arg index="0">
 			<set>
 				<bean class="redis.clients.jedis.HostAndPort">
@@ -55,14 +55,14 @@
 		<constructor-arg index="1" value="2000" type="int"></constructor-arg>
 		<constructor-arg index="2" value="100" type="int"></constructor-arg>
 		<constructor-arg index="3" ref="jedisPoolConfig"></constructor-arg>
-	</bean>-->
+	</bean>
 
 
 	<!-- 集群配置模式二 配置Cluster -->
-	<bean id="redisClusterConfiguration"
+<!--	<bean id="redisClusterConfiguration"
 		  class="org.springframework.data.redis.connection.RedisClusterConfiguration">
 		<property name="maxRedirects" value="3"></property>
-		<!-- 节点配置 -->
+		&lt;!&ndash; 节点配置 &ndash;&gt;
 		<property name="clusterNodes">
 			<set>
 				<bean class="org.springframework.data.redis.connection.RedisClusterNode">
@@ -96,11 +96,11 @@
 		  class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
 		<constructor-arg ref="redisClusterConfiguration" />
 		<constructor-arg ref="jedisPoolConfig" />
-	</bean>
+	</bean>-->
 	<!-- redis 访问的模版 -->
-	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+<!--	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
 		<property name="connectionFactory" ref="jeidsConnectionFactory" />
-	</bean>
+	</bean>-->
 
 
 	<!--redis Sentinel主从高可用方案配置 -->

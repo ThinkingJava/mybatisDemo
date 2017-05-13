@@ -27,7 +27,7 @@ public class RedisCache {
 	public final static String CAHCENAME="cache";//缓存名
 	public final static int CAHCETIME=60;//默认缓存时间
 
-	@Autowired
+//	@Autowired
 	private RedisTemplate<String, String> redisTemplate;
 
 	public <T> boolean putCache(String key, T obj) {
@@ -121,7 +121,10 @@ public class RedisCache {
 	 */
 	public void deleteCacheWithPattern(String pattern) {
 		Set<String> keys = redisTemplate.keys(pattern);
-		redisTemplate.delete(keys);
+		for(String key:keys){
+			redisTemplate.delete(key);
+		}
+//		redisTemplate.delete(keys);
 	}
 
 	/**

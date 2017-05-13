@@ -19,10 +19,10 @@ public class UserServiceImpl implements UserService {
 	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 	@Autowired
 	private UserDao userDao;
-	@Autowired
-	private RedisCache cache;
 //	@Autowired
-//	private RedisClusterCache cache;
+//	private RedisCache cache;
+	@Autowired
+	private RedisClusterCache cache;
 	
 	
 	@Override

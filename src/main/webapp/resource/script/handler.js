@@ -48,7 +48,7 @@ var handler = {
 
     goodsBuy: function (goodsId) {
         //执行购买请求
-        $.post(handler.URL.goodsBuy(goodsId), {}, function (result) {
+        $.get(handler.URL.goodsBuy(goodsId), {}, function (result) {
             if (result && result['success']) {
             	alert("购买成功！");
             	window.location.reload();
